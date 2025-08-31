@@ -1,13 +1,9 @@
-# APB_Interface_Simulation
-
-This is a simulation project based on APB Protocol, simulated on Xilinx Vivado using AMBA APB specifications and FSM to transfer data. The input data timing format for the APB interface is customized as written in the testbench. 
-
 
 # Entity: APB_Bridge 
 - **File**: APB_Bridge.v
 
 ## Diagram
-![Diagram](Documents/APB_Bridge.svg "Diagram")
+![Diagram](APB_Bridge.svg "Diagram")
 ## Ports
 
 | Port name         | Direction | Type  | Description |
@@ -61,47 +57,4 @@ This is a simulation project based on APB Protocol, simulated on Xilinx Vivado u
 
 ## State machines
 
-![Diagram_state_machine_0]( Documents/fsm_APB_Bridge_00.svg "Diagram")
-
-
-# Entity: APB_Slave 
-- **File**: APB_Slave.v
-
-## Diagram
-![Diagram](Documents/APB_Slave.svg "Diagram")
-## Ports
-
-| Port name | Direction | Type  | Description |
-| --------- | --------- | ----- | ----------- |
-| pclk      | input     |       |             |
-| presetn   |           |       |             |
-| penable   | input     |       |             |
-| psel      | input     |       |             |
-| pwrite    | input     |       |             |
-| paddr     | input     | [7:0] |             |
-| pwdata    | input     | [7:0] |             |
-| prdata    | output    | [7:0] |             |
-| pready    | output    |       |             |
-
-## Signals
-
-| Name      | Type      | Description |
-| --------- | --------- | ----------- |
-| mem[63:0] | reg [7:0] |             |
-
-## Constants
-
-| Name  | Type | Value | Description |
-| ----- | ---- | ----- | ----------- |
-| IDLE  |      | 2'b00 |             |
-| WRITE |      | 2'b01 |             |
-| READ  |      | 2'b10 |             |
-
-## Processes
-- unnamed: ( @(posedge pclk or negedge preset_n) )
-  - **Type:** always
-
-## State machines
-
-![Diagram_state_machine_0]( Documents/fsm_APB_Slave_00.svg "Diagram")
-
+![Diagram_state_machine_0]( fsm_APB_Bridge_00.svg "Diagram")
